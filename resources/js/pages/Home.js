@@ -11,7 +11,7 @@ import {
   Card,
   CardTitle,
   CardSubtitle,
-  Button,
+  CardText,
   CardImg,
   CardBody
 } from 'reactstrap';
@@ -132,7 +132,8 @@ useEffect(()=>{
   <CardImg top width="10px" height="10px" src={product.src} alt="Card image cap" />
   <CardBody>
     <CardTitle>{product.title}</CardTitle>
-    <CardSubtitle>{product.price}</CardSubtitle>
+    <CardText>{product.desc}</CardText>
+    <CardSubtitle>Price:{product.price}€</CardSubtitle>
     <button className="btn btn-success"
     onClick={() => dispatch({type:'ADD_ITEM',payload:{title:product.title,quantity:1,id:product.id,price:product.price}})}>Add To Cart</button>
   </CardBody>
