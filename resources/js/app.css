@@ -1,0 +1,45 @@
+.checkout {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 100;
+  }
+
+  .checkout-list{
+    padding-top: 10%;
+    z-index: 101;
+  }
+  .checkout-left {
+    width: 30%;
+    height: 100%;
+    background: white;
+  }
+  .checkout-right {
+    width: 70%;
+    height: 100%;
+    background:#524763;
+  }
+  .menu-button {
+    
+    z-index:105;;
+  }
+  .checkout_button {
+    appearance: none;
+    position: absolute;
+    margin-top: 60%;
+    margin-left: 30%;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    z-index:105;;
+
+  }
+  .head{
+      align-content: center;
+      padding-left: 20%;
+  }
