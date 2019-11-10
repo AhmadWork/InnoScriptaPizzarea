@@ -163,5 +163,5 @@ return [
     | Supported: "lax", "strict"
     |
     */
-    'same_site' => null,
+    'same_site' => 'lax'
 ];
