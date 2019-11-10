@@ -61,7 +61,7 @@ function Header (props) {
           )
        
         }
-        <NavLink className='menu-button' tag={Link} onClick={()=> setIsNavOpen(!isNavOpen)} >Menu</NavLink>
+        <NavLink className='menu-button' tag={Link} onClick={()=> setIsNavOpen(!isNavOpen)} >Cart</NavLink>
  </div>
  <Checkout isOpen ={isNavOpen} />
  </header>

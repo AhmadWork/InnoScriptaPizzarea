@@ -6,7 +6,7 @@ import Routes from './routes';
 import store from './store';
 import * as action from './store/actions';
 import { StateProvider } from './Context'
-import './App.css';
+import './styles.css';
 store.dispatch(action.authCheck());
 
 const initialState = {

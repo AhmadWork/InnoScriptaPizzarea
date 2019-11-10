@@ -1,16 +1,16 @@
-# Laravel React To Do App
+# InnoScriota Pizzarea
 
 ## Set Up
 
 #### Clone the repository:
 
 ```bash
-git clone
+git clone https://github.com/AhmadWork/InnoScriptaPizzarea.git
 ```
 
 #### Create your environment file:
 ```bash
-cp .env.example .env
+cp .env
 ```
 #### Update these settings in the .env file:
 
@@ -50,7 +50,9 @@ npm install
 npm run dev
 ```
 
-### Additional Set Up Tips
+### React Code 
+due to the limited time I didn't focus on the design and opt to go with bootstrap, I tried to show more than one way of bulding component(e.g:Checkout was bulid with functional component and hooks and Login was bulid with class component)
+and show more than one way of state managment(e.g: auth was handled with redux and cart was handled with context).
 
 #### Database Seeding
 

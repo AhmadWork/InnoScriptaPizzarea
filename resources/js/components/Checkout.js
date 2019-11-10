@@ -48,7 +48,7 @@ const Checkout = ({isOpen}) => {
         </Table>
         </animated.div>
         <animated.div style={{transform:x.interpolate(x=>`translate3d(${x}%,0,0)`)}}  className="checkout-right">
-        <Link to="/checkout"><Button className='checkout_button' onClick >Procced tO checkout</Button></Link>
+        <Link to="/checkout"><Button className='checkout_button' onClick >Procced to checkout</Button></Link>
         </animated.div>
     </div>
       

@@ -91,7 +91,8 @@ class OrderController extends ApiController
             ];
             $order =new Order($orderf);
 $order->save();
-     
+
+return $order;
 
         foreach ($request->cart as $item) {
             $itemf=[
@@ -100,11 +101,9 @@ $order->save();
                 'count'=>$item['count']
     
             ];
-       $item= new OrderItem($itemf);
-        $item->save();
-
+       $orderItems.push($item);
         }
-        return $order;
+        
         /*  
         $order= new Order;
             $order->user_id         = $user->id;
