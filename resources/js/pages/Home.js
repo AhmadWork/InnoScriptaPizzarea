@@ -50,8 +50,6 @@ const [items,setItems]= useState( {
   const api = '/api/product';
 
 useEffect(()=>{
-  const token = localStorage.getItem('access_token');
-  console.log(token);
   Http.get(`${api}`).then((response) => {
     const { data } = response.data;
     setItems({
