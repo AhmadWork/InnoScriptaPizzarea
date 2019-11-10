@@ -133,8 +133,8 @@ useEffect(()=>{
   <CardBody>
     <CardTitle>{product.title}</CardTitle>
     <CardSubtitle>{product.price}</CardSubtitle>
-    <Button
-    onClick={() => dispatch({type:'ADD_ITEM',payload:{title:product.title,quantity:1,id:product.id,price:product.price}})}>Add To Cart</Button>
+    <button className="btn btn-success"
+    onClick={() => dispatch({type:'ADD_ITEM',payload:{title:product.title,quantity:1,id:product.id,price:product.price}})}>Add To Cart</button>
   </CardBody>
 </Card>
  </Col>

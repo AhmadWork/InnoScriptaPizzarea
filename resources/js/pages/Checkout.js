@@ -25,28 +25,20 @@ const [error,SetError] =useState('');
                 e.preventDefault()
                 console.log(form)
         
-                axios.post(api,form)
+                Http.post(api,form)
                 .then(function (response) {
+                  isRedirect(true);
+              
                   console.log(response);
                 })
                 .catch(function (error) {
                   console.log(error);
-                });                  }
-                 async function addOrder (order) {
-                    axios.post(api, order)
-                      .then(({ data }) => {
-                      
-                        console.log(data)
-                      isRedirect(true);
-                        
-                      })
-                      .catch(() => {
-                        setError(
-                          'Sorry, there was an error saving your to do.',
-                        );
-                      });
+                });                 
+               }
+                 
+                  
 
-                  }
+                  
                 
     return (
         <Container>
@@ -104,10 +96,9 @@ const [error,SetError] =useState('');
             <input type="text" value={form.zip} onChange={onChange} className="form-control" name="zip" id="zip"/>
            
         </div>
+        <button className="btn btn-outline-success btn-lg btn-block"  onClick={onSubmit} >Order</button>
         </div>
-      
-      <button  onClick={onSubmit} >Order</button>
- 
+
     </>
         ):(
             <h2 className='col-6 offset-6'>Nothing in the cart</h2>

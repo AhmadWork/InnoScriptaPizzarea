@@ -28,7 +28,7 @@ const reducer = (state, action) => {
       const newItems = state.cart.filter(item => item.id !== id)
     return { ...state, cart: newItems }
     default:
-      return state
+      return initialState;
   }
 }
 ReactDOM.render(
