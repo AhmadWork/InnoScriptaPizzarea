@@ -19,13 +19,13 @@ const Checkout = ({isOpen}) => {
       });
     
     return (
-        <div className="checkout" style={{pointerEvents:isOpen?'all':'none'}}>
+        <div className="checkout" style={{pointerEvents:isOpen?'all':'none',display:isOpen?'':'none'}}>
         <animated.div style={{transform:x.interpolate(x=>`translate3d(-${x}%,0,0)`)}} className="checkout-left"> 
         <Table >
         
         <thead>
           <tr>
-            <th>#</th>
+            
             <th>Name</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -36,7 +36,7 @@ const Checkout = ({isOpen}) => {
          
        
               <tr>
-                <th scope="row">{quantity.id}</th>
+            
                 <td>{quantity.title}</td>
                 <td>{quantity.quantity}</td>
                 <td>{quantity.price*quantity.quantity}</td>

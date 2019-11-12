@@ -41,9 +41,6 @@ function Header (props) {
                 Account
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>
-                  Settings
-                </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem onClick={handleLogout}>
                   Log Out

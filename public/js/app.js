@@ -2448,7 +2448,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".checkout {\n    position: fixed;\n    left: 0;\n    right: 0;\n    top: 0;\n    bottom: 0;\n    display: -webkit-box;\n    display: flex;\n    z-index: 100;\n  }\n\n  .checkout-list{\n    padding-top: 10%;\n    z-index: 101;\n  }\n  .checkout-left {\n    width: 30%;\n    height: 100%;\n    background: white;\n  }\n  .checkout-right {\n    width: 70%;\n    height: 100%;\n    background:#524763;\n  }\n  .menu-button {\n    \n    z-index:105;;\n  }\n  .checkout_button {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    position: absolute;\n    margin-top: 60%;\n    margin-left: 30%;\n    color: whitesmoke;\n    font-weight: bold;\n    font-size: 2rem;\n    background: transparent;\n    border: none;\n    z-index:105;;\n\n  }\n  .head{\n      align-content: center;\n      padding-left: 20%;\n  }", ""]);
+exports.push([module.i, ".checkout {\n    position: fixed;\n    left: 0;\n    right: 0;\n    top: 0;\n    bottom: 0;\n    display: -webkit-box;\n    display: flex;\n    z-index: 100;\n  }\n\n  .checkout-list{\n    padding-top: 10%;\n    z-index: 101;\n  }\n  .checkout-left {\n    width: 60%;\n    height: 100%;\n    background: white;\n  }\n  .checkout-right {\n    width: 40%;\n    height: 100%;\n    background:#524763;\n  }\n  .menu-button {\n    \n    z-index:105;;\n  }\n  .checkout_button {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    position: absolute;\n    margin-top: 50%;\n    margin-left: 10%;\n    margin-right: 10%;\n    color: whitesmoke;\n    font-weight: bold;\n    font-size: 1.5rem;\n    background: transparent;\n    border: none;\n    z-index:105;;\n\n  }\n  .head{\n      align-content: center;\n      padding-left: 20%;\n  }", ""]);
 
 // exports
 
@@ -64679,7 +64679,8 @@ var Checkout = function Checkout(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "checkout",
     style: {
-      pointerEvents: isOpen ? 'all' : 'none'
+      pointerEvents: isOpen ? 'all' : 'none',
+      display: isOpen ? '' : 'none'
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
     style: {
@@ -64688,10 +64689,8 @@ var Checkout = function Checkout(_ref) {
       })
     },
     className: "checkout-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Table"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "#"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, cart.map(function (quantity) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-      scope: "row"
-    }, quantity.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.price * quantity.quantity));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Table"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Price"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, cart.map(function (quantity) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, quantity.price * quantity.quantity));
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div, {
     style: {
       transform: x.interpolate(function (x) {
@@ -64772,7 +64771,7 @@ function Header(props) {
     caret: true
   }, "Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownMenu"], {
     right: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], null, "Settings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], {
     divider: true
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["DropdownItem"], {
     onClick: handleLogout
@@ -65605,7 +65604,7 @@ var Home = function Home(props) {
       height: "10px",
       src: product.src,
       alt: "Card image cap"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], null, product.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardText"], null, product.desc), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardSubtitle"], null, "Price:", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], null, product.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardText"], null, product.desc), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardSubtitle"], null, "Price:", product.price, "\u20AC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "btn btn-success",
       onClick: function onClick() {
         return dispatch({

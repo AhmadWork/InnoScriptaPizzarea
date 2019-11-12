@@ -13,12 +13,12 @@
     z-index: 101;
   }
   .checkout-left {
-    width: 30%;
+    width: 60%;
     height: 100%;
     background: white;
   }
   .checkout-right {
-    width: 70%;
+    width: 40%;
     height: 100%;
     background:#524763;
   }
@@ -29,11 +29,12 @@
   .checkout_button {
     appearance: none;
     position: absolute;
-    margin-top: 60%;
-    margin-left: 30%;
+    margin-top: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
     color: whitesmoke;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: transparent;
     border: none;
     z-index:105;;
