@@ -14,7 +14,7 @@ const initialState = {
 
 const authLogin = (state, payload) => {
   const { access_token: AccessToken, user } = payload;
-  localStorage.setItem('access_token', AccessToken);
+  localStorage.setItem('access_token', user.token);
   localStorage.setItem('user', JSON.stringify(user));
   Http.defaults.headers.common.Authorization = `Bearer ${AccessToken}`;
   const stateObj = Object.assign({}, state, {

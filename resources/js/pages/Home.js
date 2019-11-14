@@ -17,6 +17,7 @@ import {
 } from 'reactstrap';
 import Http from '../Http';
 import { useStateValue } from '../Context';
+import axios from '../Http';
 
 
 
@@ -52,7 +53,7 @@ const [items,setItems]= useState( {
 useEffect(()=>{
   const token = localStorage.getItem('access_token');
   console.log(token);
-  Http.get(`${api}`).then((response) => {
+  axios.get(`${api}`).then((response) => {
     const { data } = response.data;
     setItems({
       data, error: false,

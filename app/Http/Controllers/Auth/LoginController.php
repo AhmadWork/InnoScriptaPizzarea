@@ -32,8 +32,10 @@ class LoginController extends APIController
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => array(
                 'id' => $user->hashid,
-                'name' => $user->name
+                'name' => $user->name,
+                'token' => $token
             )
         ], 200);
+
     }
 }

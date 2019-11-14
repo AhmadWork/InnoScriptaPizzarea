@@ -65468,6 +65468,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var imgs = [{
   src: 'https://i.ibb.co/pWC2HDr/template.png',
   altText: '',
@@ -67103,7 +67104,7 @@ var initialState = {
 var authLogin = function authLogin(state, payload) {
   var AccessToken = payload.access_token,
       user = payload.user;
-  localStorage.setItem('access_token', AccessToken);
+  localStorage.setItem('access_token', user.token);
   localStorage.setItem('user', JSON.stringify(user));
   _Http__WEBPACK_IMPORTED_MODULE_1__["default"].defaults.headers.common.Authorization = "Bearer ".concat(AccessToken);
   var stateObj = Object.assign({}, state, {
