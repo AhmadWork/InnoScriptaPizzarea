@@ -29,7 +29,6 @@ class LoginController extends APIController
             'message' => 'Authorized.',
             'header' => 'Access-Control-Allow-Credentials',
             'access_token' => $token,
-            'sameSite' => 'None',
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => array(
