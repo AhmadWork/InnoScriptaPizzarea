@@ -24,7 +24,7 @@ class LoginController extends APIController
         // Get the user data.
         $user = auth()->user();
 
-        return response()->json([
+        return [
             'status' => 200,
             'message' => 'Authorized.',
             'header' => 'Access-Control-Allow-Credentials',
@@ -36,7 +36,7 @@ class LoginController extends APIController
                 'name' => $user->name,
                 'token' => $token
             )
-        ], 200);
+        ];
 
     }
 }
