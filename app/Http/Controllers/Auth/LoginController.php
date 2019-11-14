@@ -28,6 +28,7 @@ class LoginController extends APIController
             'status' => 200,
             'Content-Type'=>'X-Requested-With',
             'message' => 'Authorized.',
+            'sameSite'=>'lax',
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
