@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import Http from '../Http';
+import axios from 'axios';
 
 class Archive extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Archive extends Component {
   }
 
   componentDidMount() {
-    Http.get(this.api)
+    axios.get(this.api)
       .then((response) => {
         const { data } = response.data;
         const apiMore = response.data.links.next;
@@ -37,7 +37,7 @@ class Archive extends Component {
 
   loadMore = () => {
     this.setState({ loading: true });
-    Http.get(this.state.apiMore)
+    axios.get(this.state.apiMore)
       .then((response) => {
         const { data } = response.data;
         const apiMore = response.data.links.next;
@@ -57,7 +57,7 @@ class Archive extends Component {
     const { key } = e.target.dataset;
     const { data: todos } = this.state;
 
-    Http.delete(`${this.api}/${key}`)
+    axios.delete(`${this.api}/${key}`)
       .then((response) => {
         if (response.status === 204) {
           const index = todos.findIndex(Order => parseInt(Order.id, 10) === parseInt(key, 10));

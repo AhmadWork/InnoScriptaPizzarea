@@ -64816,7 +64816,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Http */ "./resources/js/Http.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
@@ -64867,7 +64868,7 @@ function (_Component) {
         loading: true
       });
 
-      _Http__WEBPACK_IMPORTED_MODULE_3__["default"].get(_this.state.apiMore).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(_this.state.apiMore).then(function (response) {
         var data = response.data.data;
         var apiMore = response.data.links.next;
 
@@ -64890,7 +64891,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "deleteTodo", function (e) {
       var key = e.target.dataset.key;
       var todos = _this.state.data;
-      _Http__WEBPACK_IMPORTED_MODULE_3__["default"]["delete"]("".concat(_this.api, "/").concat(key)).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("".concat(_this.api, "/").concat(key)).then(function (response) {
         if (response.status === 204) {
           var index = todos.findIndex(function (Order) {
             return parseInt(Order.id, 10) === parseInt(key, 10);
@@ -64923,7 +64924,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _Http__WEBPACK_IMPORTED_MODULE_3__["default"].get(this.api).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(this.api).then(function (response) {
         var data = response.data.data;
         var apiMore = response.data.links.next;
 
@@ -65454,8 +65455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _Http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Http */ "./resources/js/Http.js");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Context */ "./resources/js/Context.js");
+/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Context */ "./resources/js/Context.js");
+/* harmony import */ var _Http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Http */ "./resources/js/Http.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -65468,7 +65469,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var imgs = [{
   src: 'https://i.ibb.co/pWC2HDr/template.png',
   altText: '',
@@ -65476,7 +65476,7 @@ var imgs = [{
 }];
 
 var Home = function Home(props) {
-  var _useStateValue = Object(_Context__WEBPACK_IMPORTED_MODULE_3__["useStateValue"])(),
+  var _useStateValue = Object(_Context__WEBPACK_IMPORTED_MODULE_2__["useStateValue"])(),
       _useStateValue2 = _slicedToArray(_useStateValue, 2),
       cart = _useStateValue2[0].cart,
       dispatch = _useStateValue2[1];
@@ -65515,7 +65515,7 @@ var Home = function Home(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var token = localStorage.getItem('access_token');
     console.log(token);
-    _Http__WEBPACK_IMPORTED_MODULE_2__["default"].get("".concat(api)).then(function (response) {
+    _Http__WEBPACK_IMPORTED_MODULE_3__["default"].get("".concat(api)).then(function (response) {
       var data = response.data.data;
       setItems({
         data: data,
@@ -67104,7 +67104,7 @@ var initialState = {
 var authLogin = function authLogin(state, payload) {
   var AccessToken = payload.access_token,
       user = payload.user;
-  localStorage.setItem('access_token', user.token);
+  localStorage.setItem('access_token', AccessToken);
   localStorage.setItem('user', JSON.stringify(user));
   _Http__WEBPACK_IMPORTED_MODULE_1__["default"].defaults.headers.common.Authorization = "Bearer ".concat(AccessToken);
   var stateObj = Object.assign({}, state, {

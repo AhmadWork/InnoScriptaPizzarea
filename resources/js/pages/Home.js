@@ -15,7 +15,6 @@ import {
   CardImg,
   CardBody
 } from 'reactstrap';
-import Http from '../Http';
 import { useStateValue } from '../Context';
 import axios from '../Http';
 

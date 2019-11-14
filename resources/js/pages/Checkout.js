@@ -25,7 +25,7 @@ const [error,SetError] =useState('');
                 e.preventDefault()
                 console.log(form)
         
-                Http.post(api,form)
+                axios.post(api,form)
                 .then(function (response) {
                   isRedirect(true);
               

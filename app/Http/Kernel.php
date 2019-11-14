@@ -20,6 +20,8 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \Barryvdh\Cors\HandleCors::class,
+        \Spatie\Cors\Cors::class
+
 
     ];
 
@@ -66,5 +68,6 @@ class Kernel extends HttpKernel
         'cors' => \Barryvdh\Cors\HandleCors::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+        
     ];
 }
