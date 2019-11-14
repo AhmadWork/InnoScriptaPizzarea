@@ -26,6 +26,7 @@ class LoginController extends APIController
 
         return response()->json([
             'status' => 200,
+            'Content-Type'=>'X-Requested-With',
             'message' => 'Authorized.',
             'access_token' => $token,
             'token_type' => 'bearer',
