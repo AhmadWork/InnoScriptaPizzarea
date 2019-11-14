@@ -51,7 +51,10 @@ const [items,setItems]= useState( {
 
 useEffect(()=>{
   const token = localStorage.getItem('access_token');
+  const user = localStorage.getItem('user');
+
   console.log(token);
+  console.log(user);
   axios.get(`${api}`).then((response) => {
     const { data } = response.data;
     setItems({

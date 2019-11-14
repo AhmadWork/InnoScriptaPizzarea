@@ -65514,7 +65514,9 @@ var Home = function Home(props) {
   var api = '/api/product';
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var token = localStorage.getItem('access_token');
+    var user = localStorage.getItem('user');
     console.log(token);
+    console.log(user);
     _Http__WEBPACK_IMPORTED_MODULE_3__["default"].get("".concat(api)).then(function (response) {
       var data = response.data.data;
       setItems({
