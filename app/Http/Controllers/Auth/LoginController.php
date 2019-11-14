@@ -26,9 +26,8 @@ class LoginController extends APIController
 
         return response()->json([
             'status' => 200,
-            'Content-Type'=>'X-Requested-With',
             'message' => 'Authorized.',
-            'sameSite'=>'none',
+            'header' => 'Access-Control-Allow-Credentials',
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
