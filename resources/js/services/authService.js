@@ -7,7 +7,8 @@ export function login(credentials) {
       Http.post('/api/auth/login', credentials)
         .then((res) => {
           console.log(res);
-          dispatch(action.authLogin(res));
+          console.log(res.config.headers['X-XSRF-TOKEN']);
+          dispatch(action.authLogin(res.data));
           return resolve();
         })
         .catch((err) => {
