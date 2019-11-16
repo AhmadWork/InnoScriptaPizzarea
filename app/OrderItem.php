@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class OrderItem extends Model
 {
+    use SoftDeletes;
 
     protected $dates = [
         'created_at',
@@ -13,13 +15,15 @@ class OrderItem extends Model
         'deleted_at'
     ];
 
-    protected $fillable = [
-        'product_id',
-        'user_id',
-        'count'
-      
-    ];
+    protected $table = 'orderables';
 
-   
-    
+    public function orderable()
+    {
+        return $this->morphTo('orderable');
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

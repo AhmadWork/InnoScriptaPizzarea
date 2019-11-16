@@ -67,13 +67,23 @@ class OrderController extends ApiController
  
     
 
-  
+  /*
         foreach ($request->cart as $item) {
          
             $unit_price     = Product::find($item['id'])->price;
             $itemsPrice +=$unit_price *  $item['quantity'];
 
         }
+        */
+        foreach ($request->cart as $item) {
+         
+            $orderItem=['count'=>$item['quantity'],'product_id'=>$item['id'],'price'=>Product::find($item['id'])->price];
+            $unit_price     = Product::find($item['id'])->price;
+            $itemsPrice +=$unit_price *  $item['quantity'];
+            $orderItems->push($orderItem);
+        }
+
+    
 
            // Warning: Data isn't being fully sanitized yet.
        
@@ -90,19 +100,11 @@ class OrderController extends ApiController
             'status' => 'new', 
             ];
             $order =new Order($orderf);
-$order->save();
 
+$order->save();
 return $order;
 
-        foreach ($request->cart as $item) {
-            $itemf=[
-                'user_id'=>$user->id,
-                'product_id'=>$order->id,
-                'count'=>$item['count']
-    
-            ];
-       $orderItems.push($item);
-        }
+      
         
         /*  
         $order= new Order;
