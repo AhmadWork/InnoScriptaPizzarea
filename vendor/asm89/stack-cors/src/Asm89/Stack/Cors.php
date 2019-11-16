@@ -14,7 +14,8 @@ namespace Asm89\Stack;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+$http_foundation_factory = new HttpFoundationFactory();
+$laravel_esponse = $http_foundation_factory->createResponse($psr_response);
 class Cors implements HttpKernelInterface
 {
     /**
