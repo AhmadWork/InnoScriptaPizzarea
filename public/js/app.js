@@ -66909,6 +66909,7 @@ function login(credentials) {
   return function (dispatch) {
     return new Promise(function (resolve, reject) {
       _Http__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/login', credentials).then(function (res) {
+        console.log(res);
         dispatch(_store_actions__WEBPACK_IMPORTED_MODULE_1__["authLogin"](res.data));
         return resolve();
       })["catch"](function (err) {

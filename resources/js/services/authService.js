@@ -6,6 +6,7 @@ export function login(credentials) {
     new Promise((resolve, reject) => {
       Http.post('/api/auth/login', credentials)
         .then((res) => {
+          console.log(res);
           dispatch(action.authLogin(res.data));
           return resolve();
         })
