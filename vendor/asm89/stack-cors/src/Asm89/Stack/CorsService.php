@@ -13,7 +13,7 @@ namespace Asm89\Stack;
 
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;;
 
 class CorsService
 {
