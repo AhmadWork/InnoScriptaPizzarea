@@ -13,13 +13,14 @@ const initialState = {
 };
 
 const authLogin = (state, payload) => {
-  const { access_token: AccessToken, user } = payload;
-  localStorage.setItem('access_token', AccessToken);
-  localStorage.setItem('user', JSON.stringify(user));
+  const { data } = payload;
+  
+  localStorage.setItem('access_token', payload.X-XSRF-TOKEN);
+  localStorage.setItem('user', JSON.stringify(data));
   Http.defaults.headers.common.Authorization = `Bearer ${AccessToken}`;
   const stateObj = Object.assign({}, state, {
     isAuthenticated: true,
-    user,
+    data,
   });
   return stateObj;
 };

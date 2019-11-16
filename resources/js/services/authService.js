@@ -7,7 +7,7 @@ export function login(credentials) {
       Http.post('/api/auth/login', credentials)
         .then((res) => {
           console.log(res);
-          dispatch(action.authLogin(res.data));
+          dispatch(action.authLogin(res));
           return resolve();
         })
         .catch((err) => {
