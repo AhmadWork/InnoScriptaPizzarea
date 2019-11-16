@@ -23,7 +23,7 @@ class LoginController extends APIController
 
         // Get the user data.
         $user = auth()->user();
-
+return dd($user);
         return [
             'status' => 200,
             'message' => 'Authorized.',
