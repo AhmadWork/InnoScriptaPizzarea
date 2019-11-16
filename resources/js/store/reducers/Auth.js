@@ -13,7 +13,7 @@ const initialState = {
 };
 
 const authLogin = (state, payload) => {
-  const { access_token: AccessToken, user } = payload.data;
+  const { access_token: AccessToken, user } = payload;
   localStorage.setItem('access_token', AccessToken);
   localStorage.setItem('user', JSON.stringify(user));
   Http.defaults.headers.common.Authorization = `Bearer ${AccessToken}`;
